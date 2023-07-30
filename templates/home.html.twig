@@ -1,0 +1,558 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="w3-top">
+        <div class="w3-bar w3-card  w3-animate-top w3-white" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="#home" class="w3-bar-item w3-button">TIL TOPPEN</a>
+            <a href="#kalender" class="w3-bar-item w3-button w3-hide-small">KALENDER</a>
+            <a href="#about" class="w3-bar-item w3-button w3-hide-small">OM DANEBORG</a>
+            <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small">GALLERI</a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="#kalender" class="w3-bar-item w3-button" onclick="toggleFunction()">KALENDER</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">OM DANEBORG</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERI</a>
+        </div>
+    </div>
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Velkommen til Daneborg</span>
+        </div>
+    </div>
+
+    <!-- Container (Bookings Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="kalender">
+        <h1 class="w3-center">Kalender</h1>
+
+        <div class="w3-row">
+            <div class="w3-col m6 w3-padding-large">
+                <div>
+                    <div id="calendar"></div>
+                    <p><span style="color:red;">Røde</span> datoer er allerede booket</p>
+                </div>
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <div>
+                    <h5>Bemærk:</h5>
+                    <ul style="padding-left:2rem;">
+                        <li>Lejren udlejes fra maj til oktober</li>
+                        <li><strong>Lejren udlejes IKKE til private!</strong></li>
+                    </ul>
+                </div>
+                <div style="margin-top:2rem;">
+                    <h5>For booking kontakt:</h5>
+                    <ul style="list-style: none; padding-left:2rem;">
+                        <li>Jørgen Hviid</li>
+                        <li><a href="tel:+4575926130">+45 75 92 61 30</a></li>
+                        <li><a href="tel:+4575926130">+45 40 16 61 30</a></li>
+                        <li><a href="mailto:udlejer@daneborg.dk">udlejer@daneborg.dk</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Parallax Image with Portfolio Text -->
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Om Daneborg</span>
+        </div>
+    </div>
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">58</span><br>
+            Sovepladser
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">70</span><br>
+            Spisepladser
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">9</span><br>
+            Toliletter
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">5</span><br>
+            Brusenicher
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h3 class="w3-center">Om Daneborg</h3>
+        <p class="w3-center"><em>Gludvej 4 A, 7130 Juelsminde</em></p>
+        <p style="padding-top:2rem;">
+            Lejren er beliggende i Sandbjerg vig nord for Juelsminde. <br>
+            Lejren er nyopført i 2011 efter en brand i 2010.<br>
+            Grunden er lejet af Palsgård Gods, Juelsminde.<br>
+            Lejren ligger omgivet af skov på en smuk naturgrund direkte ud til vandet.<br>
+            Dem originale lejrbygning blev bygget i 1914 med tilbygninger i 1938 og 1956.<br>
+            Derefter genopført første gang i 1994 efter en brand.<br>
+            Lejren er velindrettet og egner sig til sommerlejre, kurser og weekendlejre fra maj til oktober.<br>
+            Der er mulighed for boldspil på strandengen, båltænding på særligt indrettet bålplads og bademulighederne er de bedste.
+        </p>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-padding-large">
+                <p>
+                    <strong>Sovepladser</strong> <br>
+                    3 soverum med plads til 8 pers.<br>
+                    7 soverum med plads til 4 pers.<br>
+                    1 soverum med plads til 2 pers.<br>
+                    Kahytten med plads til 4 pers.<br>
+                    Lejren har således soveplads til i alt 58 pers.<br>
+                </p>
+                <p>
+                    <strong>Spiserum</strong><br>
+                    Plads til 70 og service til samme antal.<br>
+                    Møbleret med kantineborde med stole.<br>
+                    Forhal og 1. sal kan benyttes som grupperum.<br>
+                    Der er lederstue.<br>
+                </p>
+                <p>
+                    <strong>Køkkenet</strong> <br>
+                    Et helt moderne køkken med køleskab, fryser, opvaskemaskine, kaffemaskine, stort komfur med 6 blus, stor ovn, indbygningsovn og micro-ovn.
+                </p>
+            </div>
+
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6 w3-padding-large">
+                <p>
+                    <strong>Toiletter i hovedbygning</strong><br>
+                    Der er 3 toiletter og ét med bad.
+                </p>
+                <p>
+                    <strong>Toiletbygning</strong><br>
+                    Er opdelt i drenge og pigeafdeling.<br>
+                    I hver afdeling er der 3 toiletter, 6 håndvaske og 2 bad.
+                </p>
+                <p>
+                    <strong>Lejrens adresse</strong><br>
+                    Daneborg<br>
+                    Gludvej 4 A<br>
+                    7130 Juelsminde
+                </p>
+                <p>
+                    <strong>Tilkørsel</strong><br>
+                    Al tilkørsel til lejren sker fra hovedvejen.
+                </p>
+                <p style="padding-top: 1rem;">
+                    <a href="/info">Yderligere oplysninger og regler</a><br>
+                    <a href="/img/plantegning.jpeg">Plantegning</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Parallax Image with Portfolio Text -->
+    <div class="bgimg-3 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Galleri</span>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="portfolio">
+        <h3 class="w3-center">Galleri</h3>
+        <p class="w3-center"><em>Her er nogle billeder af vores smukke lejr.</em></p><br>
+
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_1.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_1.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_2.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_2.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_3.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_3.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_4.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_4.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+
+        <div class="w3-row-padding w3-center w3-section">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_5.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_5.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_6.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_6.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_7.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_7.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_8.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_8.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+            <button id="show-all-pics" onclick="showAllPictures()" class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">FLERE BILLEDER</button>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_9.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_9.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_10.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_10.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_11.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_11.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_12.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_12.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_13.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_13.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_14.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_14.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_15.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_15.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_16.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_16.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_17.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_17.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_30.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_30.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_31.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_31.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_32.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_32.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_21.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_21.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_22.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_22.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_23.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_23.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_24.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_24.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_25.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_25.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_18.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_18.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_19.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_19.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_20.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_20.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_29.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_29.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_26.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_26.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_27.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_27.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_28.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_28.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_33.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_33.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_34.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_34.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_35.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_35.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_36.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_36.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_37.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_37.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_38.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_38.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_39.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_39.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_41.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_41.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_40.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_40.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_42.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_42.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_43.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_43.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_44.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_44.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_45.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_45.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_46.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_46.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_50.jpeg') }}">
+                   <img src="{{ asset('img/daneborg_50.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_51.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_51.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-center w3-section extra_photos hidden">
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_49.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_49.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_47.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_47.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_48.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_48.jpeg') }}" style="width:100%"  class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+
+            <div class="w3-col m3">
+                <a data-fslightbox href="{{ asset('img/daneborg_52.jpeg') }}">
+                    <img src="{{ asset('img/daneborg_52.jpeg') }}" style="width:100%" class="w3-hover-opacity" alt="FDF Lejr billede">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-container">
+        <div class="w3-row-padding">
+            <div class="w3-section w3-col m4">
+                <h3>Adresse</h3>
+                <p style="margin: 2px;">Daneborg</p>
+                <p style="margin: 2px;">Gludvej 4 A</p>
+                <p style="margin: 2px;">7130 Juelsminde</p>
+            </div>
+            <div class="w3-section w3-col m4">
+                <h3>Links</h3>
+                <p style="margin: 2px;"><a href="https://fdf.dk/">FDF</a></p>
+                <p style="margin: 2px;"><a href="https://www.kystlandet.dk/juelsminde">Julesminde</a></p>
+                <p style="margin:2px;"><a href="/administration">Administration</a></p>
+            </div>
+            <div class="w3-section w3-col m4">
+                <h3>Kontakt</h3>
+                <p style="margin: 2px;">Jørgen Hviid</p>
+                <p style="margin: 2px;"><a href="tel:+4575926130">+45 75 92 61 30</a></p>
+                <p style="margin: 2px;"><a href="tel:+4575926130">+45 40 16 61 30</a></p>
+                <p style="margin: 2px;"><a href="mailto:udlejer@daneborg.dk">udlejer@daneborg.dk</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        function showAllPictures() {
+            let pictures = document.getElementsByClassName('extra_photos');
+            for (let i = 0; i < pictures.length; i++) {
+                pictures[i].classList.remove('hidden');
+            }
+            document.getElementById('show-all-pics').style.display = 'none';
+        }
+
+        function getDisabledDates() {
+            let disabledDates = [];
+            {% for booking in bookings %}
+            disabledDates.push({
+                from: (new Date('{{ booking.startDate|date('Y-m-d') }}')).setDate((new Date('{{ booking.startDate|date('Y-m-d') }}')).getDate() - 1),
+                to: new Date('{{ booking.endDate|date('Y-m-d') }}')
+            });
+            {% endfor %}
+            window.DisabledDates = disabledDates;
+        }
+
+        setTimeout(() => {
+            getDisabledDates();
+            window.initCalendar();
+            console.log(window.DisabledDates);
+        }, 250);
+    </script>
+{% endblock %}

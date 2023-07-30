@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="w3-top">
+        <div class="w3-bar w3-card  w3-animate-top w3-white" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="/" class="w3-bar-item w3-button">TIL TOPPEN</a>
+            <a href="/#kalender" class="w3-bar-item w3-button w3-hide-small">KALENDER</a>
+            <a href="/#about" class="w3-bar-item w3-button w3-hide-small">OM DANEBORG</a>
+            <a href="/#portfolio" class="w3-bar-item w3-button w3-hide-small">GALLERI</a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="/#kalender" class="w3-bar-item w3-button" onclick="toggleFunction()">KALENDER</a>
+            <a href="/#about" class="w3-bar-item w3-button" onclick="toggleFunction()">OM DANEBORG</a>
+            <a href="/#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERI</a>
+        </div>
+    </div>
+
+
+    <div style="padding:4rem;">
+        <h2>Yderligere Oplysninger om Daneborg</h2>
+
+        <div align="left"><strong>Biler og Parkering</strong><br />Skovvejen er ensrettet og m&aring; ikke blokeres.<br />Alle biler bedes benytte P-bevis, som er klisterm&aelig;rker, der forefindes p&aring; lejren.<br />Der m&aring; kun parkeres 6 biler ved lejren.<br />Ved bes&oslash;g skal P-pladserne p&aring; hovedvejen benyttes.<br />Frak&oslash;rsel sker ad samme vej som tilk&oslash;rsel.<br /><br /><strong>Lejromr&aring;det</strong><br /><u>Der m&aring; ikke opsl&aring;s telte eller opstilles campingvogne.</u><br />B&aring;lt&aelig;nding m&aring; kun finde sted p&aring; b&aring;lpladsen.<br />B&aring;lpladsen samt lejromr&aring;det afleveres ryddet for affald og lign.<br /><br /><strong>F&aelig;rdsel i skoven</strong><br />Tag hensyn overalt i skoven.<br />Der m&aring; ikke br&aelig;kkes, sk&aelig;res eller snittes i tr&aelig;er eller grene.<br />Nedfaldne grene m&aring; benyttes til b&aring;lt&aelig;nding.<br /><br />Poster og meldinger til l&oslash;b m&aring; kun ops&aelig;ttes, hvor de ikke &oslash;del&aelig;gger noget (p&aring; tr&aelig;er med snor).<br />Husk alle poster og meldinger skal fjernes efter l&oslash;bet.<br />Ved decideret o-l&oslash;b skal tilladelse indhentes hos skovfogeden.<br /><br /><u>Rygning i skoven er ikke tilladt.</u><br /><br /><strong>Service</strong><br />Ved afrejse noteres itusl&aring;et service eller andet &oslash;delagt materiel i lejrbogen.<br />Erstatning vil blive opkr&aelig;vet.<br /><br /><strong>Borde/stole</strong><br />Lejrens m&oslash;bler m&aring; ikke benyttes udend&oslash;rs.<br />Brug gamle b&aelig;nke samt havem&oslash;bler udend&oslash;rs.<br /><br /><strong>Madrasser</strong><br />Lagen skal altid anvendes. Madrasserne m&aring; ikke fjernes fra sengene.<br /><br /><strong>Udsmykning&nbsp;</strong><br />M&aring; ikke fjernes og andet m&aring; ikke ops&aelig;ttes.<br />Benyt opslagstavlerne.<br />Der m&aring; ikke ops&aelig;ttes nogen form for opslag og lign. p&aring; bygningerne.</div>
+        <div align="left">&nbsp;</div>
+        <div align="left">
+            Det er forbudt at skrive, sk&aelig;re eller tegne p&aring; v&aelig;gge, lofter, d&oslash;re og inventar.<br />
+            Erstatning vil blive opkr&aelig;vet, hvis dette ikke overholdes.<br /><br />
+            <strong>Brandmateriel</strong><br />
+            M&aring; ikke bruges til leg af nogen art.<br /><br />
+            <strong>Hunde m&aring; ikke medbringes.</strong><br /><br />
+            <strong>Husk selv at medbringe</strong><br />
+            Viskestykker, karklude og h&aring;ndkl&aelig;der.<br />
+            Toiletpapir.<br />
+            Opvaskemiddel til h&aring;ndopvask.<br /><br />
+            <h3>Reng&oslash;ring ved afrejse</h3>
+            <strong style="text-decoration: underline;">Lejren efterlades rengjort overalt.</strong><br />
+            <ul style="padding: 0;" type="1">
+                <li style="margin-left: 2px; list-style: inside;">Alt service reng&oslash;res og stilles p&aring; plads.</li>
+                <li style="margin-left: 2px; list-style: inside;">Service opt&aelig;lles og itusl&aring;et service noteres i lejrbogen. Is&aelig;r komfur, ovn og k&oslash;leskab reng&oslash;res grundigt.</li>
+                <li style="margin-left: 2px; list-style: inside;">Alle madvarer medtages.</li>
+                <li style="margin-left: 2px; list-style: inside;">Afbryd k&oslash;leskab og fryser p&aring; kontakt i k&oslash;kkenet og luk l&aring;gerne op.</li>
+                <li style="margin-left: 2px; list-style: inside;">K&oslash;kkengulv fejes og vaskes.</li>
+                <li style="margin-left: 2px; list-style: inside;">I spisesal, forhal og i lederstue aft&oslash;rres borde og vindueskarme.</li>
+                <li style="margin-left: 2px; list-style: inside;">Stole ops&aelig;ttes i stoleoph&aelig;ng. Borde placeres som ved ankomst.</li>
+                <li style="margin-left: 2px; list-style: inside;">Alle gulve fejes og vaskes. Papirkurve t&oslash;mmes.</li>
+                <li style="margin-left: 2px; list-style: inside;">Toiletter og h&aring;ndvaske reng&oslash;res. Gulvet fejes og vaskes. Toilet affaldsspande t&oslash;mmes.</li>
+                <li style="margin-left: 2px; list-style: inside;">Skurepulver og toiletrens forefindes p&aring; lejren.</li>
+                <li style="margin-left: 2px; list-style: inside;">B&aring;lplads og affaldsplads samt lejromr&aring;det afleveres ryddet.</li>
+                <li style="margin-left: 2px; list-style: inside;">Terrasser og udend&oslash;rs fliseareal fejes.</li>
+                <li style="margin-left: 2px; list-style: inside;">Evt. kan reng&oslash;ring bestilles seperat mod betaling.</li>
+            </ul>
+            <strong><em>NB Str&oslash;mmen m&aring; ikke afbrydes.</em></strong><br /><br /><strong>Praktiske oplysninger</strong><br />Ved udlejning fremsendes lejekontrakt i 2 eksemplarer hvoraf den ene sendes retur til udlejer J&oslash;rgen Hviid, Johannevej 5, 7000 Fredericia, i underskrevet stand.<br /><br /><strong>Pris for leje af hytten</strong><br />Pr. dag hverdage 2000,00 kr.&nbsp;<br />Pr. weekend (fredag til s&oslash;ndag) 5000,00 kr.&nbsp;<br />Pr. hele uge i skoleferien (l&oslash;rdag kl. 14:00 til l&oslash;rdag kl. 11:00) 18000,00 kr.&nbsp;</div>
+        <div align="left">Priserne er excl. elforbrug, der afl&aelig;ses ved ankomst og igen ved afrejse,</div>
+        <div align="left">afl&aelig;sningen sendes som SMS til 40166130 eller sendes p&aring; mail til</div>
+        <div align="left"><a href="mailto:hviid@fam-hviid.dk">hviid@fam-hviid.dk</a>&nbsp;som fremsender regning herefter, prisen er 5,50 kr. pr. streg.</div>
+        <div align="left">Slutreng&oslash;ring kan tilv&aelig;lges, 1800,00 kr.&nbsp;</div>
+        <div align="left"><br /><strong><em>Lejren udlejes kun til FDF, KFUM, KFUK, DDS samt efterskoler under disse. Ligeledes ogs&aring; til b&oslash;rneinstitutioner og skoler(0. - 2. klasser, SFO).<br /></em></strong><span style="color: #ff0000; font-size: xx-small;"><strong><em><span style="font-size: 12pt;">Lejren udlejes IKKE til private.</span><br /></em></strong></span><br /><strong>Aflysning</strong><br />S&aring;fremt aflysning af lejem&aring;let sker mindst 30 dage f&oslash;r lejem&aring;l, betales halv leje. Efter denne dato fuld leje.<br /><strong>Betaling sker senest 14 dage efter lejren.</strong><br /><br /><strong>Ankomst og afrejse</strong><br />Tre dage f&oslash;r ankomst skal lejrens udlejer have meddelelse om ankomst og afrejsetidspunkt.</div>
+        <div align="left">&nbsp;</div>
+        <div align="left"><strong>Opsyn</strong><br />Lejren er under opsyn af:<br />J&oslash;rgen Hviid<br />Lejrens udlejer har tlf. 75 92 61 30/40 16 61 30<br /><br />Vi &oslash;nsker jer en god lejr, med h&aring;bet om at I vil tage hensyn til s&aring;vel lejren, dens inventar og omgivelser, samt naboer og andre der f&aelig;rdes ved lejren.<br /><br /><strong>FDF FREDERICIA 1. KREDS</strong></div>		<br>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-container">
+        <div class="w3-row-padding">
+            <div class="w3-section w3-col m4">
+                <h3>Adresse</h3>
+                <p style="margin: 2px;">Daneborg</p>
+                <p style="margin: 2px;">Gludvej 4 A</p>
+                <p style="margin: 2px;">7130 Juelsminde</p>
+            </div>
+            <div class="w3-section w3-col m4">
+                <h3>Links</h3>
+                <p style="margin: 2px;"><a href="https://fdf.dk/">FDF</a></p>
+                <p style="margin: 2px;"><a href="https://www.kystlandet.dk/juelsminde">Julesminde</a></p>
+                <p style="margin:2px;"><a href="/administration">Administration</a></p>
+            </div>
+            <div class="w3-section w3-col m4">
+                <h3>Kontakt</h3>
+                <p style="margin: 2px;">Jørgen Hviid</p>
+                <p style="margin: 2px;"><a href="tel:+4575926130">+45 75 92 61 30</a></p>
+                <p style="margin: 2px;"><a href="tel:+4575926130">+45 40 16 61 30</a></p>
+                <p style="margin: 2px;"><a href="mailto:udlejer@daneborg.dk">udlejer@daneborg.dk</a></p>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

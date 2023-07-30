@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Daneborg Admin</h1>
+        <p>Velkommen til admin panelet for Daneborg.dk’s booking kalender.
+            Herunder kan du registrere bookinger af Daneborg som vil fremgå af kalenderen på hjemmesiden.  </p>
+        <div style="display: flex; margin-top:2rem;">
+            <section style="width: 40%">
+                <div>
+                    <div id="error-box" style="color:red;"></div>
+                </div>
+
+                {{ form_start(form, {
+                    'attr': {
+                        'class': 'admin-form'
+                    }
+                }) }}
+                <div class="my-custom-class-for-errors">
+                    {{ form_errors(form) }}
+                </div>
+
+                <div class="row">
+                    <div class="col" style="margin-bottom: 2rem;">
+                        <div style="width: 100%">
+                            {{ form_label(form.name, 'Navn') }}
+                        </div>
+                        <input
+                                type="text"
+                                id="name-input"
+                                name="{{ field_name(form.name) }}"
+                                value="{{ field_value(form.name) }}"
+                                placeholder="{{ field_label(form.name) }}"
+                                class="form-control"
+                                style="padding:10px; width:18rem;"
+                        />
+                    </div>
+                    <div class="col" id="some-custom-id" style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 0;">Kalender</h3>
+                        <p style="margin-top: 0;">
+                            Vælg start og slut dato for bookingen
+                        </p>
+                        <div id="admin-calendar"></div>
+                        <input
+                                type="date"
+                                id="start_date"
+                                min="{{ 'now'|date('Y-m-d') }}"
+                                name="{{ field_name(form.startDate) }}"
+                                value="{{ field_value(form.startDate) }}"
+                                placeholder="{{ field_label(form.startDate) }}"
+                                class="form-control hidden"
+                                onchange="startDateChanged(this.value)"
+                        />
+                    </div>
+                    <div class="col" id="some-custom-id">
+                        <input
+                                type="date"
+                                id="end_date"
+                                name="{{ field_name(form.endDate) }}"
+                                value="{{ field_value(form.endDate) }}"
+                                placeholder="{{ field_label(form.endDate) }}"
+                                class="form-control hidden"
+                        />
+                    </div>
+                </div>
+
+                {{ form_end(form) }}
+            </section>
+            <section style="width: 60%">
+                <div style="margin-top: 2rem;">
+                    <a href="/">Til hjemmeside</a>
+                    <a href="/logout" style="color: red; margin-left: 2rem;">Log ud</a>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <h2>Booking Oversigt</h2>
+                    <p>Se og annuller bookinger allerede lavet i kalenderen</p>
+                </div>
+                <table id="bookings">
+                    <tr>
+                        <th>Navn</th>
+                        <th>Start Dato</th>
+                        <th>Slut Dato</th>
+                        <th>Slet</th>
+                    </tr>
+                    {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.startDate|date('Y-m-d') }}</td>
+                            <td>{{ booking.endDate|date('Y-m-d') }}</td>
+                            <td>
+                                <button onclick="deleteBooking({{ booking.id }})">X</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </section>
+        </div>
+    </div>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+
+        const form = document.querySelector('.admin-form');
+        form.addEventListener('submit', (e) => {
+            if (!window.selectedDates) {
+                document.getElementById('error-box').innerText = 'Du skal vælge en start og end dato';
+                e.preventDefault();
+            }
+            if (document.getElementById('name-input').value.length === 0) {
+                document.getElementById('error-box').innerText = 'Du skal indtaste et navn';
+                e.preventDefault();
+            }
+            const sd = new Date(window.selectedDates[0]);
+            const ed = new Date(window.selectedDates[1]);
+
+            document.querySelector('#start_date').value = sd.getFullYear()  + "-" + (("0"+(sd.getMonth()+1)).slice(-2)) + "-" + ("0" + sd.getDate()).slice(-2);
+            document.querySelector('#end_date').value = ed.getFullYear()  + "-" + (("0"+(ed.getMonth()+1)).slice(-2)) + "-" + ("0" + ed.getDate()).slice(-2);
+        });
+
+
+        function deleteBooking(id) {
+            if (confirm("Er du sikker på at du vil slette denne booking?")) {
+                fetch('/delete/booking/' + id, {
+                    method: 'DELETE'
+                }).then(res => location.reload());
+            }
+        }
+
+        function startDateChanged(el) {
+            document.getElementById('end_date').setAttribute('min', el);
+        }
+
+        function getDisabledDates() {
+            let disabledDates = [];
+            {% for booking in bookings %}
+                disabledDates.push({
+                    from: (new Date('{{ booking.startDate|date('Y-m-d') }}')).setDate((new Date('{{ booking.startDate|date('Y-m-d') }}')).getDate() - 1),
+                    to: new Date('{{ booking.endDate|date('Y-m-d') }}')
+                });
+            {% endfor %}
+            window.DisabledDates = disabledDates;
+        }
+
+        setTimeout(() => {
+            getDisabledDates();
+            window.initAdminCalendar();
+            console.log(window.DisabledDates);
+        }, 250);
+    </script>
+
+{% endblock %}
