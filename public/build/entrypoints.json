@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_flatpickr_dist_esm_index_js-node_modules_flatpickr_dist_l10n_da_js-node_-b1eb86.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/vendors-node_modules_flatpickr_dist_esm_index_js-node_modules_flatpickr_dist_l10n_da_js-node_-b1eb86.css",
+        "/build/app.css"
+      ]
+    }
+  }
+}
